@@ -14,10 +14,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "/dummy/register")
-    public void saveUser()
+    @PostMapping(value = "/dummy/register")//user is getting registered (dummy api for testing purpose)
+    public void saveUser(@RequestBody User user){
+        userService.addUser(user);
+    }
 
-    @GetMapping(value = "/admin/getUsers")
+    @GetMapping(value = "/admin/getUsers") //working
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
