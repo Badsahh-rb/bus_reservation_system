@@ -15,6 +15,7 @@ import java.util.List;
 
 @Entity
 @Data
+@JsonIgnoreProperties({"tickets"})
 public class Bus {
     @Id
     private Long bus_id;

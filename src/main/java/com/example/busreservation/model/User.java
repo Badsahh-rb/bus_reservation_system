@@ -14,11 +14,11 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@JsonIgnoreProperties({"tickets"})
+@JsonIgnoreProperties({"tickets"})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long user_id;        //primary key is created by name id by default
+    private Long id;        //primary key is created by name id by default
 
     @Column(nullable = false, unique = true)
     private String email;

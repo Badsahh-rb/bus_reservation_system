@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,7 +30,8 @@ public class UserServiceImpl implements UserService{
         user1.setActivated(false);
         user1.setWalletBalance(user.getWalletBalance());
         user1.setActivationHash(UUID.randomUUID().toString());
-        user1.setRole("ROLE_USER");
+        user1.setRole(user.getRole());
+
         return userRepo.save(user1);
     }
 
@@ -57,6 +59,17 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteUserById(Long id) {
         userRepo.deleteById(id);
+    }
+
+    //need to implement for authentication
+    @Override
+    public void activateEmail(String activationHash) {
+
+    }
+
+    @Override
+    public void sendConfirmationEmailToUser(User user, String baseUrl) {
+
     }
 
 

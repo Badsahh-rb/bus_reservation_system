@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping(value = "/dummy/register")//user is getting registered (dummy api for testing purpose)
     public void saveUser(@RequestBody User user){
-        userService.addUser(user);
+        userService.saveUser(user);
     }
 
     @GetMapping(value = "/admin/getUsers") //working

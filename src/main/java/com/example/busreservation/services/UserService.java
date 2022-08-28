@@ -14,4 +14,7 @@ public interface UserService
     void saveUser(User user);   //testing purpose
     void updateUser(User user);
     void deleteUserById(Long id);
+
+    void activateEmail(String activationHash);
+    void sendConfirmationEmailToUser(User user, String baseUrl);
 }
