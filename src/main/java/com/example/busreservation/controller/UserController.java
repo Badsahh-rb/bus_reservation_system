@@ -5,6 +5,7 @@ import com.example.busreservation.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -23,4 +24,16 @@ public class UserController {
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
+
+//    @PutMapping(value = "/user/addon/wallet")
+//    public String addMoneytoUser(Long id, BigDecimal a){
+//        userService.addMoney(id,a);
+//        return "Success";
+//    }
+//
+//    @PutMapping(value = "/user/update/wallet")
+//    public String updateMoney(Long id, BigDecimal a){
+//        userService.deductMoney(id,a);
+//        return "Updated";
+//    }
 }

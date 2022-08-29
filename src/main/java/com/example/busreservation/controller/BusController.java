@@ -9,17 +9,22 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/api")
 public class BusController {
     @Autowired
     private BusService busService;
 
-    @PostMapping(value = "/dummy/savebus")
-    public void saveBus(@RequestBody Bus bus){
-        busService.addBus(bus);
+    @PostMapping(value = "/admin/dummy/addbus")
+    public String saveBus(@RequestBody Bus bus){
+        return busService.addBus(bus);
+    }
+    @PostMapping(value = "/admin/updateBus")
+    public void updateBus(@RequestBody Bus bus){
+        busService.updateBus(bus);
     }
 
-    @GetMapping(value = "/getBuses")
+    @GetMapping(value = "/admin/getBuses")
     public List<Bus> getAllBuses() {
         return busService.getAllBuses();
     }

@@ -72,6 +72,16 @@ public class UserServiceImpl implements UserService{
 
     }
 
+//    @Override
+//    public void addMoney(Long id, BigDecimal a) {
+//        userRepo.addMoney(id,a);
+//    }
+//
+//    @Override
+//    public void deductMoney(Long id, BigDecimal a) {
+//        userRepo.deductMoney(id,a);
+//    }
+
 
 //    @Override
 //    public User getUserById(Long id) {

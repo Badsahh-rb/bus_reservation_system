@@ -3,6 +3,7 @@ package com.example.busreservation.services;
 import com.example.busreservation.model.User;
 import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface UserService
@@ -17,4 +18,8 @@ public interface UserService
 
     void activateEmail(String activationHash);
     void sendConfirmationEmailToUser(User user, String baseUrl);
+
+//    void addMoney(Long id, BigDecimal a);
+//
+//    void deductMoney(Long id, BigDecimal a);
 }

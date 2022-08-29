@@ -27,13 +27,9 @@ public class Bus {
     private String type;
     private BigDecimal price;
     @NotNull
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date departureDate;
     private String duration;
-    @NotNull
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
-    private Date arrivalDate;
-
     @OneToMany(mappedBy = "bus", cascade = CascadeType.REMOVE)
     private List<Tickets> tickets;
 }

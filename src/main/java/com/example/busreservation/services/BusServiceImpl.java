@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 @Service
@@ -13,8 +16,11 @@ import java.util.Optional;
 public class BusServiceImpl implements BusService{
     @Autowired
     BusRepo busRepo;
+
+    SimpleDateFormat f1=new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
     @Override
-    public Bus addBus(Bus bus) {
+    public String addBus(Bus bus)  {
 //        Bus findBus=busRepo.getOne(bus.getBus_id());
 //
 //        if(findBus!=null){
@@ -30,11 +36,11 @@ public class BusServiceImpl implements BusService{
         b1.setPrice(bus.getPrice());
         b1.setDepartureDate(bus.getDepartureDate());
         b1.setDuration(bus.getDuration());
-        b1.setArrivalDate(bus.getArrivalDate());
 
-
-        return busRepo.save(b1);
+        busRepo.save(b1);
+        return "New Bus Added";
     }
+
 
     @Override
     public Optional<Bus> getBusbyId(Long bus_id) {
